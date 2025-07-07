@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products - Hayco Pet Shop | Designer Pet Accessories in Shivamogga</title>
+    <title>Products - Hayco Pet Shop | Designer Pet Accessories & Food in Shivamogga</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -13,6 +13,8 @@
             --dark: #292f36;
             --light: #f7fff7;
             --accent: #ffd166;
+            --food: #a5d6a7;
+            --pet-food: #81c784;
         }
         
         * {
@@ -270,7 +272,6 @@
             position: absolute;
             top: 1rem;
             right: 1rem;
-            background: var(--primary);
             color: white;
             padding: 0.3rem 0.8rem;
             border-radius: 50px;
@@ -286,6 +287,14 @@
         .product-badge.sale {
             background: var(--accent);
             color: var(--dark);
+        }
+        
+        .product-badge.food {
+            background: var(--food);
+        }
+        
+        .product-badge.pet-food {
+            background: var(--pet-food);
         }
         
         .product-img {
@@ -347,10 +356,17 @@
         }
         
         .product-category {
-            color: var(--secondary);
             font-size: 0.9rem;
             font-weight: 500;
             margin-bottom: 0.5rem;
+        }
+        
+        .category-accessories {
+            color: var(--secondary);
+        }
+        
+        .category-food {
+            color: var(--food);
         }
         
         .product-title {
@@ -792,8 +808,8 @@
 
     <!-- Products Section -->
     <section class="products-section">
-        <h2 class="section-title">Premium Pet Accessories</h2>
-        <p class="section-subtitle">Shop our collection of designer collars, stylish belts, and accessories for your furry friends</p>
+        <h2 class="section-title">Premium Pet Products</h2>
+        <p class="section-subtitle">Shop our collection of designer accessories and premium food for your furry friends</p>
         
         <div class="filter-controls">
             <div class="filter-group">
@@ -805,23 +821,16 @@
                     <option>Pet Belts</option>
                     <option>Harnesses</option>
                     <option>Accessories</option>
+                    <option>Dog Food</option>
+                    <option>Cat Food</option>
                 </select>
             </div>
-            
-            <div class="filter-group">
-                <span class="filter-label">Sort by:</span>
-                <select class="filter-select" id="sortFilter">
-                    <option value="popularity">Popularity</option>
-                    <option value="newest">Newest</option>
-                    <option value="price-low">Price: Low to High</option>
-                    <option value="price-high">Price: High to Low</option>
-                    <option value="rating">Customer Rating</option>
-                </select>
-            </div>
+           
+</div>
         </div>
         
         <div class="products-grid" id="productsGrid">
-            <!-- Product 1 -->
+            <!-- Product 1 - Dog Collar -->
             <div class="product-card" data-category="dog-collars" data-price="499" data-rating="4.5" data-date="2023-05-15">
                 <span class="product-badge new">New</span>
                 <div class="product-img">
@@ -833,7 +842,7 @@
                     </div>
                 </div>
                 <div class="product-info">
-                    <span class="product-category">Dog Collars</span>
+                    <span class="product-category category-accessories">Dog Collars</span>
                     <h3 class="product-title">Designer Dog Collar with Bell</h3>
                     <div class="product-rating">
                         <i class="fas fa-star"></i>
@@ -847,10 +856,11 @@
                         <span class="current-price">₹499</span>
                         <span class="old-price">₹699</span>
                     </div>
+                    
                 </div>
             </div>
             
-            <!-- Product 2 -->
+            <!-- Product 2 - Cat Collar -->
             <div class="product-card" data-category="cat-collars" data-price="399" data-rating="4" data-date="2023-06-10">
                 <span class="product-badge sale">Sale</span>
                 <div class="product-img">
@@ -862,7 +872,7 @@
                     </div>
                 </div>
                 <div class="product-info">
-                    <span class="product-category">Cat Collars</span>
+                    <span class="product-category category-accessories">Cat Collars</span>
                     <h3 class="product-title">Soft Fabric Cat Collar with Bell</h3>
                     <div class="product-rating">
                         <i class="fas fa-star"></i>
@@ -876,10 +886,11 @@
                         <span class="current-price">₹399</span>
                         <span class="old-price">₹549</span>
                     </div>
+                    
                 </div>
             </div>
             
-            <!-- Product 3 -->
+            <!-- Product 3 - Pet Belt -->
             <div class="product-card" data-category="pet-belts" data-price="599" data-rating="5" data-date="2023-04-22">
                 <div class="product-img">
                     <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" alt="Stylish Pet Belt">
@@ -890,7 +901,7 @@
                     </div>
                 </div>
                 <div class="product-info">
-                    <span class="product-category">Pet Belts</span>
+                    <span class="product-category category-accessories">Pet Belts</span>
                     <h3 class="product-title">Stylish Pet Belt with Bow</h3>
                     <div class="product-rating">
                         <i class="fas fa-star"></i>
@@ -906,11 +917,11 @@
                 </div>
             </div>
             
-            <!-- Product 4 -->
-            <div class="product-card" data-category="dog-collars" data-price="449" data-rating="4.5" data-date="2023-07-05">
-                <span class="product-badge new">New</span>
+            <!-- Product 4 - Dog Food (Pedigree) -->
+            <div class="product-card" data-category="dog-food" data-price="799" data-rating="4.8" data-date="2023-07-01">
+                <span class="product-badge pet-food">Best Seller</span>
                 <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1586671267731-da2cf3ceeb80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1790&q=80" alt="Colorful Dog Collar">
+                    <img src="images/Kitten Food.avif" alt="Pedigree Dog Food">
                     <div class="product-actions">
                         <button class="action-btn"><i class="far fa-heart"></i></button>
                         <button class="action-btn"><i class="fas fa-eye"></i></button>
@@ -918,26 +929,29 @@
                     </div>
                 </div>
                 <div class="product-info">
-                    <span class="product-category">Dog Collars</span>
-                    <h3 class="product-title">Colorful Dog Collar India</h3>
+                    <span class="product-category category-food">Dog Food</span>
+                    <h3 class="product-title">Pedigree Adult Dog Food 10kg</h3>
                     <div class="product-rating">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
-                        <span>(15)</span>
+                        <span>(142)</span>
                     </div>
                     <div class="product-price">
-                        <span class="current-price">₹449</span>
+                        <span class="current-price">₹799</span>
+                        <span class="old-price">₹999</span>
                     </div>
+                
                 </div>
             </div>
             
-            <!-- Product 5 -->
-            <div class="product-card" data-category="dog-collars" data-price="349" data-rating="4" data-date="2023-03-18">
+            <!-- Product 5 - Cat Food (Whiskas) -->
+            <div class="product-card" data-category="cat-food" data-price="349" data-rating="4.7" data-date="2023-06-15">
+                <span class="product-badge pet-food">Popular</span>
                 <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1601758003122-53c40e686a19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Puppy Collar">
+                    <img src="https://images.unsplash.com/photo-1591871937573-74dbba515c4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Whiskas Cat Food">
                     <div class="product-actions">
                         <button class="action-btn"><i class="far fa-heart"></i></button>
                         <button class="action-btn"><i class="fas fa-eye"></i></button>
@@ -945,23 +959,24 @@
                     </div>
                 </div>
                 <div class="product-info">
-                    <span class="product-category">Dog Collars</span>
-                    <h3 class="product-title">Puppy Collar for Small Dogs</h3>
+                    <span class="product-category category-food">Cat Food</span>
+                    <h3 class="product-title">Whiskas Kitten Food 1.2kg</h3>
                     <div class="product-rating">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <span>(21)</span>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(98)</span>
                     </div>
                     <div class="product-price">
                         <span class="current-price">₹349</span>
                     </div>
+            
                 </div>
             </div>
             
-            <!-- Product 6 -->
+            <!-- Product 6 - Harness -->
             <div class="product-card" data-category="harnesses" data-price="699" data-rating="4.5" data-date="2023-02-28">
                 <span class="product-badge sale">Sale</span>
                 <div class="product-img">
@@ -973,7 +988,7 @@
                     </div>
                 </div>
                 <div class="product-info">
-                    <span class="product-category">Harnesses</span>
+                    <span class="product-category category-accessories">Harnesses</span>
                     <h3 class="product-title">Pet Harness for Dogs</h3>
                     <div class="product-rating">
                         <i class="fas fa-star"></i>
@@ -987,13 +1002,15 @@
                         <span class="current-price">₹699</span>
                         <span class="old-price">₹899</span>
                     </div>
+                    
                 </div>
             </div>
             
-            <!-- Product 7 -->
-            <div class="product-card" data-category="pet-belts" data-price="549" data-rating="5" data-date="2023-01-15">
+            <!-- Product 7 - Dog Food (Royal Canin) -->
+            <div class="product-card" data-category="dog-food" data-price="1299" data-rating="4.9" data-date="2023-05-20">
+                <span class="product-badge new">Premium</span>
                 <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1581464907818-5cd4a6f4eb1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Adjustable Pet Belt">
+                    <img src="https://images.unsplash.com/photo-1621351183012-e2f9972dd9bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80" alt="Royal Canin Dog Food">
                     <div class="product-actions">
                         <button class="action-btn"><i class="far fa-heart"></i></button>
                         <button class="action-btn"><i class="fas fa-eye"></i></button>
@@ -1001,27 +1018,56 @@
                     </div>
                 </div>
                 <div class="product-info">
-                    <span class="product-category">Pet Belts</span>
-                    <h3 class="product-title">Adjustable Pet Belt with Bells</h3>
+                    <span class="product-category category-food">Dog Food</span>
+                    <h3 class="product-title">Royal Canin Mini Adult 3kg</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                                                 <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(76)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">₹1299</span>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- Product 8 - Cat Food (Royal Canin) -->
+            <div class="product-card" data-category="cat-food" data-price="1199" data-rating="4.8" data-date="2023-06-05">
+                <span class="product-badge pet-food">Premium</span>
+                <div class="product-img">
+                    <img src="images/Kitten Food.avif" alt="Royal Canin Cat Food">
+                    <div class="product-actions">
+                        <button class="action-btn"><i class="far fa-heart"></i></button>
+                        <button class="action-btn"><i class="fas fa-eye"></i></button>
+                        <button class="action-btn"><i class="fas fa-share-alt"></i></button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <span class="product-category category-food">Cat Food</span>
+                    <h3 class="product-title">Royal Canin Kitten Food 2kg</h3>
                     <div class="product-rating">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(35)</span>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(64)</span>
                     </div>
                     <div class="product-price">
-                        <span class="current-price">₹549</span>
+                        <span class="current-price">₹1199</span>
                     </div>
+                    
                 </div>
             </div>
             
-            <!-- Product 8 -->
-            <div class="product-card" data-category="accessories" data-price="249" data-rating="4" data-date="2023-07-20">
-                <span class="product-badge new">New</span>
+            <!-- Product 9 - Pet Accessories -->
+            <div class="product-card" data-category="accessories" data-price="249" data-rating="4.2" data-date="2023-03-18">
                 <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" alt="Cute Pet Bow">
+                    <img src="images/Bow Tie.avif" alt="Pet Bow Tie">
                     <div class="product-actions">
                         <button class="action-btn"><i class="far fa-heart"></i></button>
                         <button class="action-btn"><i class="fas fa-eye"></i></button>
@@ -1029,27 +1075,28 @@
                     </div>
                 </div>
                 <div class="product-info">
-                    <span class="product-category">Accessories</span>
-                    <h3 class="product-title">Cute Pet Bow Accessory</h3>
+                    <span class="product-category category-accessories">Accessories</span>
+                    <h3 class="product-title">Stylish Pet Bow Tie</h3>
                     <div class="product-rating">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="far fa-star"></i>
-                        <span>(12)</span>
+                        <span>(15)</span>
                     </div>
                     <div class="product-price">
                         <span class="current-price">₹249</span>
                     </div>
+            
                 </div>
             </div>
             
-            <!-- Additional products for pagination demo -->
-            <!-- Product 9 -->
-            <div class="product-card" data-category="dog-collars" data-price="599" data-rating="4" data-date="2023-06-15">
+            <!-- Product 10 - Dog Food (Pedigree Wet) -->
+            <div class="product-card" data-category="dog-food" data-price="199" data-rating="4.6" data-date="2023-07-10">
+                <span class="product-badge new">New</span>
                 <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" alt="Leather Dog Collar">
+                    <img src="images/dog food.avif" alt="Pedigree Wet Dog Food">
                     <div class="product-actions">
                         <button class="action-btn"><i class="far fa-heart"></i></button>
                         <button class="action-btn"><i class="fas fa-eye"></i></button>
@@ -1057,795 +1104,103 @@
                     </div>
                 </div>
                 <div class="product-info">
-                    <span class="product-category">Dog Collars</span>
-                    <h3 class="product-title">Premium Leather Dog Collar</h3>
+                    <span class="product-category category-food">Dog Food</span>
+                    <h3 class="product-title">Pedigree Wet Dog Food 400g</h3>
                     <div class="product-rating">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="far fa-star"></i>
-                        <span>(19)</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="current-price">₹599</span>
-                    </div>
-                </div>
-            </div>
-            
-           <!-- Product 10 -->
-            <div class="product-card" data-category="cat-collars" data-price="349" data-rating="4.5" data-date="2023-05-20">
-                <span class="product-badge sale">Sale</span>
-                <div  class="product-img">
-                    <img src="https://images.unsplash.com/photo-1554456854-55a089fd4cb2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Breakaway Cat Collar">
-                    <div class="product-actions">
-                        <button class="action-btn"><i class="far fa-heart"></i></button>
-                        <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        <button class="action-btn"><i class="fas fa-share-alt"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Cat Collars</span>
-                    <h3 class="product-title">Breakaway Cat Collar with Bell</h3>
-                    <div class="product-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <span>(27)</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="current-price">₹349</span>
-                        <span class="old-price">₹499</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Product 11 -->
-            <div class="product-card" data-category="harnesses" data-price="799" data-rating="5" data-date="2023-04-10">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Dog Harness">
-                    <div class="product-actions">
-                        <button class="action-btn"><i class="far fa-heart"></i></button>
-                        <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        <button class="action-btn"><i class="fas fa-share-alt"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Harnesses</span>
-                    <h3 class="product-title">Premium Dog Harness</h3>
-                    <div class="product-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(42)</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="current-price">₹799</span>
-                    </div>
-                </div>
-            </div>
-              <!-- Product 11 -->
-            <div class="product-card" data-category="harnesses" data-price="799" data-rating="5" data-date="2023-04-10">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Dog Harness">
-                    <div class="product-actions">
-                        <button class="action-btn"><i class="far fa-heart"></i></button>
-                        <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        <button class="action-btn"><i class="fas fa-share-alt"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Harnesses</span>
-                    <h3 class="product-title">Premium Dog Harness</h3>
-                    <div class="product-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(42)</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="current-price">₹799</span>
-                    </div>
-                </div>
-            </div>
-
-              <!-- Product 11 -->
-            <div class="product-card" data-category="harnesses" data-price="799" data-rating="5" data-date="2023-04-10">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Dog Harness">
-                    <div class="product-actions">
-                        <button class="action-btn"><i class="far fa-heart"></i></button>
-                        <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        <button class="action-btn"><i class="fas fa-share-alt"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Harnesses</span>
-                    <h3 class="product-title">Premium Dog Harness</h3>
-                    <div class="product-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(42)</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="current-price">₹799</span>
-                    </div>
-                </div>
-            </div>
-              <!-- Product 11 -->
-            <div class="product-card" data-category="harnesses" data-price="799" data-rating="5" data-date="2023-04-10">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Dog Harness">
-                    <div class="product-actions">
-                        <button class="action-btn"><i class="far fa-heart"></i></button>
-                        <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        <button class="action-btn"><i class="fas fa-share-alt"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Harnesses</span>
-                    <h3 class="product-title">Premium Dog Harness</h3>
-                    <div class="product-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(42)</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="current-price">₹799</span>
-                    </div>
-                </div>
-            </div>
-              <!-- Product 11 -->
-            <div class="product-card" data-category="harnesses" data-price="799" data-rating="5" data-date="2023-04-10">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Dog Harness">
-                    <div class="product-actions">
-                        <button class="action-btn"><i class="far fa-heart"></i></button>
-                        <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        <button class="action-btn"><i class="fas fa-share-alt"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Harnesses</span>
-                    <h3 class="product-title">Premium Dog Harness</h3>
-                    <div class="product-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(42)</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="current-price">₹799</span>
-                    </div>
-                </div>
-            </div>
-              <!-- Product 11 -->
-            <div class="product-card" data-category="harnesses" data-price="799" data-rating="5" data-date="2023-04-10">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Dog Harness">
-                    <div class="product-actions">
-                        <button class="action-btn"><i class="far fa-heart"></i></button>
-                        <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        <button class="action-btn"><i class="fas fa-share-alt"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Harnesses</span>
-                    <h3 class="product-title">Premium Dog Harness</h3>
-                    <div class="product-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(42)</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="current-price">₹799</span>
-                    </div>
-                </div>
-            </div>
-              <!-- Product 11 -->
-            <div class="product-card" data-category="harnesses" data-price="799" data-rating="5" data-date="2023-04-10">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Dog Harness">
-                    <div class="product-actions">
-                        <button class="action-btn"><i class="far fa-heart"></i></button>
-                        <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        <button class="action-btn"><i class="fas fa-share-alt"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Harnesses</span>
-                    <h3 class="product-title">Premium Dog Harness</h3>
-                    <div class="product-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(42)</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="current-price">₹799</span>
-                    </div>
-                </div>
-            </div>
-              <!-- Product 11 -->
-            <div class="product-card" data-category="harnesses" data-price="799" data-rating="5" data-date="2023-04-10">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Dog Harness">
-                    <div class="product-actions">
-                        <button class="action-btn"><i class="far fa-heart"></i></button>
-                        <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        <button class="action-btn"><i class="fas fa-share-alt"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Harnesses</span>
-                    <h3 class="product-title">Premium Dog Harness</h3>
-                    <div class="product-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(42)</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="current-price">₹799</span>
-                    </div>
-                </div>
-            </div>
-              <!-- Product 11 -->
-            <div class="product-card" data-category="harnesses" data-price="799" data-rating="5" data-date="2023-04-10">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Dog Harness">
-                    <div class="product-actions">
-                        <button class="action-btn"><i class="far fa-heart"></i></button>
-                        <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        <button class="action-btn"><i class="fas fa-share-alt"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Harnesses</span>
-                    <h3 class="product-title">Premium Dog Harness</h3>
-                    <div class="product-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(42)</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="current-price">₹799</span>
-                    </div>
-                </div>
-            </div>
-              <!-- Product 11 -->
-            <div class="product-card" data-category="harnesses" data-price="799" data-rating="5" data-date="2023-04-10">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Dog Harness">
-                    <div class="product-actions">
-                        <button class="action-btn"><i class="far fa-heart"></i></button>
-                        <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        <button class="action-btn"><i class="fas fa-share-alt"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Harnesses</span>
-                    <h3 class="product-title">Premium Dog Harness</h3>
-                    <div class="product-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(42)</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="current-price">₹799</span>
-                    </div>
-                </div>
-            </div>
-              <!-- Product 11 -->
-            <div class="product-card" data-category="harnesses" data-price="799" data-rating="5" data-date="2023-04-10">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Dog Harness">
-                    <div class="product-actions">
-                        <button class="action-btn"><i class="far fa-heart"></i></button>
-                        <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        <button class="action-btn"><i class="fas fa-share-alt"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Harnesses</span>
-                    <h3 class="product-title">Premium Dog Harness</h3>
-                    <div class="product-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(42)</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="current-price">₹799</span>
-                    </div>
-                </div>
-            </div>
-              <!-- Product 11 -->
-            <div class="product-card" data-category="harnesses" data-price="799" data-rating="5" data-date="2023-04-10">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Dog Harness">
-                    <div class="product-actions">
-                        <button class="action-btn"><i class="far fa-heart"></i></button>
-                        <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        <button class="action-btn"><i class="fas fa-share-alt"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Harnesses</span>
-                    <h3 class="product-title">Premium Dog Harness</h3>
-                    <div class="product-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(42)</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="current-price">₹799</span>
-                    </div>
-                </div>
-            </div>
-              <!-- Product 11 -->
-            <div class="product-card" data-category="harnesses" data-price="799" data-rating="5" data-date="2023-04-10">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Dog Harness">
-                    <div class="product-actions">
-                        <button class="action-btn"><i class="far fa-heart"></i></button>
-                        <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        <button class="action-btn"><i class="fas fa-share-alt"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Harnesses</span>
-                    <h3 class="product-title">Premium Dog Harness</h3>
-                    <div class="product-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(42)</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="current-price">₹799</span>
-                    </div>
-                </div>
-            </div>
-              <!-- Product 11 -->
-            <div class="product-card" data-category="harnesses" data-price="799" data-rating="5" data-date="2023-04-10">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Dog Harness">
-                    <div class="product-actions">
-                        <button class="action-btn"><i class="far fa-heart"></i></button>
-                        <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        <button class="action-btn"><i class="fas fa-share-alt"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Harnesses</span>
-                    <h3 class="product-title">Premium Dog Harness</h3>
-                    <div class="product-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(42)</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="current-price">₹799</span>
-                    </div>
-                </div>
-            </div>
-              <!-- Product 11 -->
-            <div class="product-card" data-category="harnesses" data-price="799" data-rating="5" data-date="2023-04-10">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Dog Harness">
-                    <div class="product-actions">
-                        <button class="action-btn"><i class="far fa-heart"></i></button>
-                        <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        <button class="action-btn"><i class="fas fa-share-alt"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Harnesses</span>
-                    <h3 class="product-title">Premium Dog Harness</h3>
-                    <div class="product-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(42)</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="current-price">₹799</span>
-                    </div>
-                </div>
-            </div>
-              <!-- Product 11 -->
-            <div class="product-card" data-category="harnesses" data-price="799" data-rating="5" data-date="2023-04-10">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Dog Harness">
-                    <div class="product-actions">
-                        <button class="action-btn"><i class="far fa-heart"></i></button>
-                        <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        <button class="action-btn"><i class="fas fa-share-alt"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Harnesses</span>
-                    <h3 class="product-title">Premium Dog Harness</h3>
-                    <div class="product-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(42)</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="current-price">₹799</span>
-                    </div>
-                </div>
-            </div>
-              <!-- Product 11 -->
-            <div class="product-card" data-category="harnesses" data-price="799" data-rating="5" data-date="2023-04-10">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Dog Harness">
-                    <div class="product-actions">
-                        <button class="action-btn"><i class="far fa-heart"></i></button>
-                        <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        <button class="action-btn"><i class="fas fa-share-alt"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Harnesses</span>
-                    <h3 class="product-title">Premium Dog Harness</h3>
-                    <div class="product-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(42)</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="current-price">₹799</span>
-                    </div>
-                </div>
-            </div>
-              <!-- Product 11 -->
-            <div class="product-card" data-category="harnesses" data-price="799" data-rating="5" data-date="2023-04-10">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Dog Harness">
-                    <div class="product-actions">
-                        <button class="action-btn"><i class="far fa-heart"></i></button>
-                        <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        <button class="action-btn"><i class="fas fa-share-alt"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Harnesses</span>
-                    <h3 class="product-title">Premium Dog Harness</h3>
-                    <div class="product-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(42)</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="current-price">₹799</span>
-                    </div>
-                </div>
-            </div>
-              <!-- Product 11 -->
-            <div class="product-card" data-category="harnesses" data-price="799" data-rating="5" data-date="2023-04-10">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Dog Harness">
-                    <div class="product-actions">
-                        <button class="action-btn"><i class="far fa-heart"></i></button>
-                        <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        <button class="action-btn"><i class="fas fa-share-alt"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Harnesses</span>
-                    <h3 class="product-title">Premium Dog Harness</h3>
-                    <div class="product-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(42)</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="current-price">₹799</span>
-                    </div>
-                </div>
-            </div>
-              <!-- Product 11 -->
-            <div class="product-card" data-category="harnesses" data-price="799" data-rating="5" data-date="2023-04-10">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Dog Harness">
-                    <div class="product-actions">
-                        <button class="action-btn"><i class="far fa-heart"></i></button>
-                        <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        <button class="action-btn"><i class="fas fa-share-alt"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Harnesses</span>
-                    <h3 class="product-title">Premium Dog Harness</h3>
-                    <div class="product-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(42)</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="current-price">₹799</span>
-                    </div>
-                </div>
-            </div>
-              <!-- Product 11 -->
-            <div class="product-card" data-category="harnesses" data-price="799" data-rating="5" data-date="2023-04-10">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Dog Harness">
-                    <div class="product-actions">
-                        <button class="action-btn"><i class="far fa-heart"></i></button>
-                        <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        <button class="action-btn"><i class="fas fa-share-alt"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Harnesses</span>
-                    <h3 class="product-title">Premium Dog Harness</h3>
-                    <div class="product-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(42)</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="current-price">₹799</span>
-                    </div>
-                </div>
-            </div>
-              <!-- Product 11 -->
-            <div class="product-card" data-category="harnesses" data-price="799" data-rating="5" data-date="2023-04-10">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Dog Harness">
-                    <div class="product-actions">
-                        <button class="action-btn"><i class="far fa-heart"></i></button>
-                        <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        <button class="action-btn"><i class="fas fa-share-alt"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Harnesses</span>
-                    <h3 class="product-title">Premium Dog Harness</h3>
-                    <div class="product-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(42)</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="current-price">₹799</span>
-                    </div>
-                </div>
-            </div>
-              <!-- Product 11 -->
-            <div class="product-card" data-category="harnesses" data-price="799" data-rating="5" data-date="2023-04-10">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Dog Harness">
-                    <div class="product-actions">
-                        <button class="action-btn"><i class="far fa-heart"></i></button>
-                        <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        <button class="action-btn"><i class="fas fa-share-alt"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Harnesses</span>
-                    <h3 class="product-title">Premium Dog Harness</h3>
-                    <div class="product-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(42)</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="current-price">₹799</span>
-                    </div>
-                </div>
-            </div>
-              <!-- Product 11 -->
-            <div class="product-card" data-category="harnesses" data-price="799" data-rating="5" data-date="2023-04-10">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Dog Harness">
-                    <div class="product-actions">
-                        <button class="action-btn"><i class="far fa-heart"></i></button>
-                        <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        <button class="action-btn"><i class="fas fa-share-alt"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Harnesses</span>
-                    <h3 class="product-title">Premium Dog Harness</h3>
-                    <div class="product-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(42)</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="current-price">₹799</span>
-                    </div>
-                </div>
-            </div>
-              <!-- Product 11 -->
-            <div class="product-card" data-category="harnesses" data-price="799" data-rating="5" data-date="2023-04-10">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Dog Harness">
-                    <div class="product-actions">
-                        <button class="action-btn"><i class="far fa-heart"></i></button>
-                        <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        <button class="action-btn"><i class="fas fa-share-alt"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Harnesses</span>
-                    <h3 class="product-title">Premium Dog Harness</h3>
-                    <div class="product-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(42)</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="current-price">₹799</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Product 12 -->
-            <div class="product-card" data-category="accessories" data-price="199" data-rating="3.5" data-date="2023-03-05">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" alt="Pet ID Tag">
-                    <div class="product-actions">
-                        <button class="action-btn"><i class="far fa-heart"></i></button>
-                        <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        <button class="action-btn"><i class="fas fa-share-alt"></i></button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Accessories</span>
-                    <h3 class="product-title">Custom Pet ID Tag</h3>
-                    <div class="product-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <i class="far fa-star"></i>
-                        <span>(8)</span>
+                        <span>(53)</span>
                     </div>
                     <div class="product-price">
                         <span class="current-price">₹199</span>
+                        <span class="old-price">₹249</span>
                     </div>
+                    
                 </div>
             </div>
         </div>
-
         
-
-
-        
-        
-        <div class="pagination" id="paginationContainer">
-            <!-- Pagination will be inserted here by JavaScript -->
-        </div>
+        <!-- Pagination -->
+        <ul class="pagination">
+            <li class="page-item">
+                <a href="#" class="page-link prev"><i class="fas fa-chevron-left"></i></a>
+            </li>
+            <li class="page-item">
+                <a href="#" class="page-link active">1</a>
+            </li>
+            <li class="page-item">
+                <a href="#" class="page-link">2</a>
+            </li>
+            <li class="page-item">
+                <a href="#" class="page-link">3</a>
+            </li>
+            <li class="page-item">
+                <a href="#" class="page-link next"><i class="fas fa-chevron-right"></i></a>
+            </li>
+        </ul>
     </section>
 
-    <!-- Product Categories
+    <!-- Product Categories -->
     <section class="product-categories">
         <h2 class="section-title">Shop by Category</h2>
-        <p class="section-subtitle">Find the perfect accessories for your pet</p>
+        <p class="section-subtitle">Find the perfect products for your pet's needs</p>
         
         <div class="categories-grid">
             <div class="category-card">
                 <div class="category-img">
-                    <img src="https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1035&q=80" alt="Dog Collars">
+                    <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" alt="Dog Accessories">
                 </div>
                 <div class="category-info">
-                    <h3>Dog Collars</h3>
-                    <p>Stylish and comfortable collars for your canine companions</p>
+                    <h3>Dog Accessories</h3>
+                    <p>Stylish collars, leashes and more for your canine companion</p>
+                    
                 </div>
             </div>
             
             <div class="category-card">
                 <div class="category-img">
-                    <img src="https://images.unsplash.com/photo-1554456854-55a089fd4cb2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Cat Collars">
+                    <img src="https://images.unsplash.com/photo-1554456854-55a089fd4cb2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Cat Accessories">
                 </div>
                 <div class="category-info">
-                    <h3>Cat Collars</h3>
-                    <p>Lightweight and safe collars for your feline friends</p>
+                    <h3>Cat Accessories</h3>
+                    <p>Beautiful collars and accessories for your feline friend</p>
+                    
                 </div>
             </div>
             
             <div class="category-card">
                 <div class="category-img">
-                    <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" alt="Pet Belts">
+                    <img src="https://images.unsplash.com/photo-1591769225440-811ad7d6eab2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Dog Food">
                 </div>
                 <div class="category-info">
-                    <h3>Pet Belts</h3>
-                    <p>Fashionable belts with bells for style and safety</p>
+                    <h3>Dog Food</h3>
+                    <p>Premium nutrition from top brands like Pedigree and Royal Canin</p>
+                    
                 </div>
             </div>
             
             <div class="category-card">
                 <div class="category-img">
-                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Harnesses">
+                    <img src="https://images.unsplash.com/photo-1591871937573-74dbba515c4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Cat Food">
                 </div>
                 <div class="category-info">
-                    <h3>Harnesses</h3>
-                    <p>Secure and comfortable harnesses for walks and training</p>
+                    <h3>Cat Food</h3>
+                    <p>Nutritious meals from Whiskas, Royal Canin and more</p>
+                    
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
 
     <!-- Featured Banner -->
     <section class="featured-banner">
         <div class="banner-content">
-            <h2>Special Offer on Designer Collars</h2>
-            <p>Get 20% off on all designer dog collars this week. Visit our store in KR Puram, Shivamogga or shop online.</p>
-            <!-- <a href="#" class="btn">Shthe Saleop </a> -->
+            <h2>Premium Pet Nutrition</h2>
+            <p>We carry only the highest quality pet food brands to ensure your furry friends get the best nutrition possible. From puppy/kitten formulas to senior diets, we have options for every life stage.</p>
+            <a href="#" class="btn">Learn More About Pet Nutrition</a>
         </div>
     </section>
 
@@ -1853,12 +1208,13 @@
     <footer>
         <div class="footer-container">
             <div class="footer-col">
-                <h3>Hayco Pet Shop</h3>
-                <p>Your trusted source for premium pet accessories in Davanagere. Designer collars, stylish belts, and more for your furry friends.</p>
+                <h3>Royal Canin Pet Planet</h3>
+                <p>Your one-stop shop for premium pet accessories and nutrition in Shivamogga. We're dedicated to providing quality products for your furry family members.</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
             
@@ -1869,31 +1225,32 @@
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="products.html">Products</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">FAQs</a></li>
                 </ul>
             </div>
             
             <div class="footer-col">
-                <h3>Product Categories</h3>
+                <h3>Products</h3>
                 <ul class="footer-links">
-                    <li><a href="#">Dog Collars</a></li>
-                    <li><a href="#">Cat Collars</a></li>
-                    <li><a href="#">Pet Belts</a></li>
-                    <li><a href="#">Harnesses</a></li>
-                    <li><a href="#">Accessories</a></li>
+                    <li><a href="#">Dog Accessories</a></li>
+                    <li><a href="#">Cat Accessories</a></li>
+                    <li><a href="#">Dog Food</a></li>
+                    <li><a href="#">Cat Food</a></li>
+                    <li><a href="#">New Arrivals</a></li>
                 </ul>
             </div>
             
             <div class="footer-col">
                 <h3>Contact Us</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Venkateshwara Temple Rd, MCC B Block, Kuvempu Nagar, Davanagere, Karnataka 577005</p>
-                <p><i class="fas fa-phone"></i> +91 09449423023</p>
-                <p><i class="fas fa-envelope"></i> info@.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Pet Street, Shivamogga, Karnataka</p>
+                <p><i class="fas fa-phone"></i> +91 9876543210</p>
+                <p><i class="fas fa-envelope"></i> info@royalcaninpetplanet.com</p>
                 <p><i class="fas fa-clock"></i> Mon-Sat: 9AM - 8PM</p>
             </div>
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2025 Royal Canin Pet Planet. All Rights Reserved.</p>
+            <p>&copy; 2023 Royal Canin Pet Planet. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -1904,6 +1261,8 @@
         
         mobileMenu.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+            mobileMenu.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
         });
         
         // Navbar Scroll Effect
@@ -1912,208 +1271,69 @@
             navbar.classList.toggle('scrolled', window.scrollY > 0);
         });
         
-        // Animation on Scroll
-        const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.product-card, .category-card');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.3;
-                
-                if(elementPosition < screenPosition) {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
-                }
-            });
-        };
+        // Product Filtering
+        const categoryFilter = document.getElementById('categoryFilter');
+        const sortFilter = document.getElementById('sortFilter');
+        const productsGrid = document.getElementById('productsGrid');
+        const products = Array.from(document.querySelectorAll('.product-card'));
         
-        // Set initial state for animated elements
-        document.querySelectorAll('.product-card, .category-card').forEach(element => {
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(20px)';
-            element.style.transition = 'all 0.5s ease';
-        });
+        categoryFilter.addEventListener('change', filterProducts);
+        sortFilter.addEventListener('change', filterProducts);
         
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
-        
-        // Pagination functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const productsPerPage = 8; // Number of products to show per page
-            const productCards = Array.from(document.querySelectorAll('.product-card'));
-            const totalProducts = productCards.length;
-            const totalPages = Math.ceil(totalProducts / productsPerPage);
-            const paginationContainer = document.getElementById('paginationContainer');
-            const productsGrid = document.getElementById('productsGrid');
-            const categoryFilter = document.getElementById('categoryFilter');
-            const sortFilter = document.getElementById('sortFilter');
+        function filterProducts() {
+            const category = categoryFilter.value.toLowerCase();
+            const sortBy = sortFilter.value;
             
-            let currentPage = 1;
-            let filteredProducts = [...productCards];
-            
-            // Initialize pagination
-            function initPagination() {
-                renderPagination();
-                showPage(currentPage);
-            }
-            
-            // Render pagination controls
-            function renderPagination() {
-                paginationContainer.innerHTML = '';
-                
-                // Previous button
-                const prevLi = document.createElement('li');
-                prevLi.className = 'page-item';
-                prevLi.innerHTML = '<a href="#" class="page-link prev"><i class="fas fa-chevron-left"></i></a>';
-                prevLi.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    if (currentPage > 1) {
-                        currentPage--;
-                        showPage(currentPage);
-                        updateActivePage();
-                    }
+            // Filter by category
+            let filteredProducts = products;
+            if (category !== 'all products') {
+                filteredProducts = products.filter(product => {
+                    const productCategory = product.dataset.category.replace('-', ' ');
+                    return productCategory.includes(category);
                 });
-                paginationContainer.appendChild(prevLi);
-                
-                // Page numbers
-                for (let i = 1; i <= totalPages; i++) {
-                    const pageLi = document.createElement('li');
-                    pageLi.className = 'page-item';
-                    pageLi.innerHTML = `<a href="#" class="page-link ${i === currentPage ? 'active' : ''}">${i}</a>`;
-                    pageLi.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        currentPage = i;
-                        showPage(currentPage);
-                        updateActivePage();
-                    });
-                    paginationContainer.appendChild(pageLi);
-                }
-                
-                // Next button
-                const nextLi = document.createElement('li');
-                nextLi.className = 'page-item';
-                nextLi.innerHTML = '<a href="#" class="page-link next"><i class="fas fa-chevron-right"></i></a>';
-                nextLi.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    if (currentPage < totalPages) {
-                        currentPage++;
-                        showPage(currentPage);
-                        updateActivePage();
-                    }
-                });
-                paginationContainer.appendChild(nextLi);
-            }
-            
-            // Update active page in pagination
-            function updateActivePage() {
-                const pageLinks = paginationContainer.querySelectorAll('.page-link:not(.prev):not(.next)');
-                pageLinks.forEach((link, index) => {
-                    if (index + 1 === currentPage) {
-                        link.classList.add('active');
-                    } else {
-                        link.classList.remove('active');
-                    }
-                });
-            }
-            
-            // Show specific page of products
-            function showPage(pageNum) {
-                const startIndex = (pageNum - 1) * productsPerPage;
-                const endIndex = startIndex + productsPerPage;
-                
-                // Hide all products first
-                productCards.forEach(card => {
-                    card.style.display = 'none';
-                });
-                
-                // Show products for current page
-                filteredProducts.slice(startIndex, endIndex).forEach(card => {
-                    card.style.display = 'block';
-                });
-            }
-            
-            // Filter products by category
-            function filterProducts() {
-                const selectedCategory = categoryFilter.value.toLowerCase().replace(' ', '-');
-                
-                if (selectedCategory === 'all-products') {
-                    filteredProducts = [...productCards];
-                } else {
-                    filteredProducts = productCards.filter(card => {
-                        return card.dataset.category === selectedCategory;
-                    });
-                }
-                
-                currentPage = 1;
-                showPage(currentPage);
-                renderPagination();
             }
             
             // Sort products
-            function sortProducts() {
-                const sortValue = sortFilter.value;
-                
-                filteredProducts.sort((a, b) => {
-                    switch(sortValue) {
-                        case 'price-low':
-                            return parseFloat(a.dataset.price) - parseFloat(b.dataset.price);
-                        case 'price-high':
-                            return parseFloat(b.dataset.price) - parseFloat(a.dataset.price);
-                        case 'rating':
-                            return parseFloat(b.dataset.rating) - parseFloat(a.dataset.rating);
-                        case 'newest':
-                            return new Date(b.dataset.date) - new Date(a.dataset.date);
-                        default: // popularity (default)
-                            const ratingA = parseFloat(a.dataset.rating);
-                            const ratingB = parseFloat(b.dataset.rating);
-                            const reviewsA = parseInt(a.querySelector('.product-rating span').textContent.match(/\d+/)[0]);
-                            const reviewsB = parseInt(b.querySelector('.product-rating span').textContent.match(/\d+/)[0]);
-                            return (ratingB * reviewsB) - (ratingA * reviewsA);
-                    }
-                });
-                
-                currentPage = 1;
-                showPage(currentPage);
-                updateActivePage();
+            switch(sortBy) {
+                case 'newest':
+                    filteredProducts.sort((a, b) => new Date(b.dataset.date) - new Date(a.dataset.date));
+                    break;
+                case 'price-low':
+                    filteredProducts.sort((a, b) => parseFloat(a.dataset.price) - parseFloat(b.dataset.price));
+                    break;
+                case 'price-high':
+                    filteredProducts.sort((a, b) => parseFloat(b.dataset.price) - parseFloat(a.dataset.price));
+                    break;
+                case 'rating':
+                    filteredProducts.sort((a, b) => parseFloat(b.dataset.rating) - parseFloat(a.dataset.rating));
+                    break;
+                default: // popularity (default sorting)
+                    // Keep original order
+                    break;
             }
             
-            // Event listeners
-            categoryFilter.addEventListener('change', filterProducts);
-            sortFilter.addEventListener('change', sortProducts);
-            
-            // Initialize
-            initPagination();
-        });
-
-        // Highlight active page in navigation
-document.addEventListener('DOMContentLoaded', function() {
-    const navLinks = document.querySelectorAll('.nav-links a');
-    let currentPage = window.location.pathname.split('/').pop();
-    
-    // Handle home page detection
-    if (!currentPage || currentPage === 'index.html') {
-        currentPage = 'index.html';
-    }
-
-    navLinks.forEach(link => {
-        // Remove 'active' class from all links first
-        link.classList.remove('active');
-        
-        // Get just the filename from the href (remove any # anchors)
-        const linkPage = link.getAttribute('href').split('#')[0];
-        
-        // Add 'active' class if this link matches current page
-        if (linkPage === currentPage) {
-            link.classList.add('active');
+            // Clear and re-add products
+            productsGrid.innerHTML = '';
+            filteredProducts.forEach(product => {
+                productsGrid.appendChild(product);
+            });
         }
-    });
-
-    // Debugging - view this in browser console
-    console.log('Current page:', currentPage);
-    navLinks.forEach(link => {
-        console.log('Link:', link.getAttribute('href'), 'Active:', link.classList.contains('active'));
-    });
-});
+        
+        // Add to cart functionality
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const productCard = button.closest('.product-card');
+                const productName = productCard.querySelector('.product-title').textContent;
+                const productPrice = productCard.querySelector('.current-price').textContent;
+                
+                alert(`${productName} has been added to your cart!\nPrice: ${productPrice}`);
+                
+                // Here you would typically add the product to a cart array or object
+                // and update the cart UI
+            });
+        });
     </script>
 </body>
 </html>
